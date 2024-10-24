@@ -66,11 +66,14 @@ print(chosenword)
 i = 0
 g = 0
 wordguessed = False
-wordsalreadyguessed = ""
+wordsalreadyguessed = []
 print(len(chosenword))
+
+
 while not wordguessed and i < 7 and g <=len(chosenword):
     print(HANGMAN[i])
     userguess = "6"
+    print()
     print("letters that you've already used:",wordsalreadyguessed)
 
     while not userguess.isalpha():
@@ -87,6 +90,6 @@ while not wordguessed and i < 7 and g <=len(chosenword):
     else:
         print("INCCORECT GUESS")
         i += 1
-    wordsalreadyguessed += userguess
+    wordsalreadyguessed.append(userguess)
 
 print("GAME OVER")
